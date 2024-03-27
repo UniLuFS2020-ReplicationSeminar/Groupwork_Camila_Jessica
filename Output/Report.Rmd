@@ -33,7 +33,7 @@ print(colnames(framingham_data))
 
 # **INTRODUCTION**
 
-In this analysis, we will investigate the association between body mass index (BMI) and the prevalence of hypertension among participants in the Framingham Heart Study. Obesity, often determined by BMI, is recognized as one of the principal risk factors for hypertension. Numerous studies have demonstrated that the prevalence of hypertension increases with rising BMI, therefore, understanding the relationship between BMI and hypertension prevalence is important for identifying individuals at risk, developing effective prevention as well as management strategies for hypertension. 
+In this analysis, we will investigate the association between body mass index (BMI) and the prevalence of hypertension among participants in the Framingham Heart Study. Obesity, often determined by BMI, is recognized as one of the principal risk factors for hypertension [1]. Numerous studies have demonstrated that the prevalence of hypertension increases with rising BMI [2,3], therefore, understanding the relationship between BMI and hypertension prevalence is important for identifying individuals at risk, developing effective prevention as well as management strategies for hypertension. 
 
 
 
@@ -123,5 +123,15 @@ The logistic regression model indicates that for every 1 unit increase in BMI, H
 # **DISCUSSION**
 
 The data from the Framingham Heart Study database was collected and applied logistic regression model and t-test. The aim was to understand the association between BMI and the prevalence of hypertension within the dataset. 
-The boxplot comparison shows a median BMI of 27 for the Hypertensive group and 24.67 for the Non-Hypertensive group. This suggests a potential association between higher BMI and hypertension.
+A BMI between 18.5 and 24.9 is considered healthy weight range. A BMI between 25.0 and 29.9 falls within the overweight range and if is 30.0 or higher it is in the obese range [4]. The boxplot comparison shows a median BMI of 27 for the Hypertensive group,  and 24.67 for the Non-Hypertensive group. This suggests a potential association between higher BMI and hypertension, and corroborates with the relationship between obesity and hypertension.
 The investigation results in the logistic regression model indicates that for every 1 unit increase in BMI, Hypertension increases by 0.1707 and the t-test reveals our p-value is < 2.2e-16 which is less than 0.05 at a 95% confidence level indicating a statistically significant difference in BMI between hypertensive and non-hypertensive groups and this could not have occurred by random chance alone. Therefore, we have sufficient evidence to reject the null hypothesis in favor of the alternative hypothesis.
+
+# **REFERENCES**
+
+[1] Kuwabara M., Kuwabara R., Niwa K., Hisatome I., Smits G., Roncal-Jimenez C.A., MacLean P.S., Yracheta J.M., Ohno M., Lanaspa M.A., et al. Different Risk for Hypertension, Diabetes, Dyslipidemia, and Hyperuricemia According to Level of Body Mass Index in Japanese and American Subjects. Nutrients. 2018;10:1011. doi: 10.3390/nu10081011.
+
+[2] Lee C.Y., Lin W.T., Tsai S., Hung Y.C., Wu P.W., Yang Y.C., Chan T.F., Huang H.L., Weng Y.L., Chiu Y.W., et al. Association of Parental Overweight and Cardiometabolic Diseases and Pediatric Adiposity and Lifestyle Factors with Cardiovascular Risk Factor Clustering in Adolescents. Nutrients. 2016;8:567. doi: 10.3390/nu8090567. 
+
+[3] Crawford A.G., Cote C., Couto J., Daskiran M., Gunnarsson C., Haas K., Haas S., Nigam S.C., Schuette R. Prevalence of obesity, type II diabetes mellitus, hyperlipidemia, and hypertension in the United States: Findings from the GE Centricity Electronic Medical Record database. Popul. Health Manag. 2010;13:151–161. doi: 10.1089/pop.2009.0039.
+
+[4] Centers for Disease Control and Prevention - CDC. Assessing Your Weight - Health Weight, Nutrition, and Physical Activity. Accessed: 27/03/2024. Source: https://www.cdc.gov/healthyweight/assessing/index.html#print
