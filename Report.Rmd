@@ -1,0 +1,120 @@
+---
+title: "Report"
+author: "Camila and Jessica"
+date: "2024-03-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+options(repos = c(CRAN = "https://cran.rstudio.com/"))  # Setting CRAN mirror
+
+```
+
+
+```{r load_data, include=FALSE}
+# Loading packages
+library(ggplot2)
+install.packages("tidyverse")
+
+
+# Loading data
+framingham_data <- read.csv("data/data_orig/framingham.csv")  
+
+colnames(framingham_data)[colnames(framingham_data) == "prevalentHyp"] <- "pHyp"
+
+# Removing rows with "NA" values
+cleaned_data <- na.omit(framingham_data)
+
+print(colnames(framingham_data))
+
+```
+
+
+
+# **INTRODUCTION**
+
+In this analysis, we will investigate the association between body mass index (BMI) and the prevalence of hypertension among participants in the Framingham Heart Study. Obesity, often determined by BMI, is recognized as one of the principal risk factors for hypertension. Numerous studies have demonstrated that the prevalence of hypertension increases with rising BMI, therefore, understanding the relationship between BMI and hypertension prevalence is important for identifying individuals at risk, developing effective prevention as well as management strategies for hypertension. 
+
+
+
+# **METHODS**
+
+
+For this study we want to understand the association between BMI and the prevalence of hypertension on the Framingham Heart Study data set.
+
+* ## Cleaning the Data
+The Framingham data set we used was pre-processed but still included missing values (NA's) and because we do not want these NA's to affect our results we decided remove the NA's and this reduced the number of our observations. Additionally, we changed the column name of our dependent variable from 'PrevalentHYP' to 'pHyp' for clarity.
+
+
+* ## Generating and Testing Hypothesis
+
+
+   **Null Hypothesis**: There is no association between BMI and the prevalence of hypertension among the studied population.
+
+   **Alternative Hypothesis**: There is an association between BMI and the prevalence of hypertension among the studied population. 
+ 
+To test these hypotheses, we visualized the associations between BMI and hypertension using boxplots and computed the BMI median for hypertensive and non-hypertensive groups. Furthermore, we employed a logistic regression model and a t-test to assess the statistical significance of our findings.
+ 
+ 
+# **RESULTS**
+
+## Boxplot and median
+
+
+```{r cleaned_data_boxplot, echo=FALSE}
+
+# Box plot for pHyp and BMI
+
+boxplot(BMI ~ pHyp, data = cleaned_data, 
+        xlab = "Prevalent Hypertension", ylab = "BMI",
+        main = "Box Plot of BMI by Prevalent Hypertension")
+```
+
+
+```{r cleaned_data_test, echo=FALSE}
+
+# Filtering the dataset to include only individuals with hypertension
+pHyp_data <- cleaned_data[cleaned_data$pHyp == 1, ]
+
+# Calculate the median BMI for hypertensive individuals
+median_bmi_pHyp <- median(pHyp_data$BMI)
+
+# Print the result
+print(median_bmi_pHyp)
+
+
+# Filtering the dataset to include only individuals without hypertension
+nopHyp_data <- cleaned_data[cleaned_data$pHyp == 0, ]
+
+# Calculating the median BMI for individuals without hypertension
+median_bmi_nopHyp <- median(nopHyp_data$BMI)
+
+# Print the result
+print(median_bmi_nopHyp)
+
+```
+
+The boxplot comparison shows a median BMI of 27 for the Hypertensive group and 24.67 for the Non-Hypertensive group. This suggests a potential association between higher BMI and hypertension.
+
+
+## Logistic regression model and t-test
+
+
+```{r cleaned_data, echo=FALSE}
+#logistic regression 
+
+
+logistic_model <- glm(pHyp ~ BMI, data = cleaned_data, family = binomial)
+
+logistic_model
+
+# data for hypertensive and non-hypertensive groups
+pHyp_bmi <- cleaned_data$BMI[cleaned_data$pHyp == 1]
+nopHyp_bmi <- cleaned_data$BMI[cleaned_data$pHyp == 0]
+
+# Performing t-test
+t_test_result <- t.test(pHyp_bmi, nopHyp_bmi)
+print(t_test_result)
+```
+
+The logistic regression model indicates that for every 1 unit increase in BMI, Hypertension increases by 0.1707 and the t-test reveals our p-value is < 2.2e-16 which is less than 0.05 at a 95% confidence level indicating a statistically significant difference in BMI between hypertensive and non-hypertensive groups and this could not have occurred by random chance alone. Therefore, we have sufficient evidence to reject the null hypothesis in favour of the alternative hypothesis.
