@@ -7,7 +7,7 @@ The aim of this work is to investigate the association between body mass index (
 - This repository contains 4 folders with different contents.  Below are short sentences describing them:
 
 - ### **Figs** 
--- This folder contain 1 figure. 
+- This folder contain 1 figure. 
 
 - ### **Output**: This folder consists of two files:
 - Report.Rmd file consists of a YAML header, chunks of code surrounded by ``` and texts. This file was used to produce a complete report containing text, codes and their outputs but the chunks of code are not accessible in this file.
