@@ -51,4 +51,5 @@ rsconnect/
 # Data for camila and jessica project
 *.csv/
 
-
+#DS_Store issue
+.DS_Store
