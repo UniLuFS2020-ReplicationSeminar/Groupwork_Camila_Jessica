@@ -4,7 +4,7 @@
 The aim of this work is to investigate the association between body mass index (BMI) and the prevalence of hypertension among participants in the Framingham Heart Study.
 
 ## Folder Structure
--This repository contains 2 folders with different contents.  Below are short sentences describing them:
+- This repository contains 2 folders with different contents.  Below are short sentences describing them:
 
 - ### **Output**: This folder consists of two files:
 - Report.Rmd file consists of a YAML header, chunks of code surrounded by ``` and texts. This file was used to produce a complete report containing text, codes and their outputs but the chunks of code are not viewable in this file.
