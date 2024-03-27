@@ -9,7 +9,3 @@ cleaned_data <- na.omit(framingham_data)
 #create a csv file for the clean data
 write.table(cleaned_data, file="cleaned_data.csv", row.names = FALSE, sep=";", na = "")
 
-#Import and View table
-library(readr)
-cleaned_data <- read_csv("data/data_prep/cleaned_data.csv")
-View(cleaned_data)
