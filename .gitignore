@@ -49,6 +49,11 @@ po/*~
 rsconnect/
 
 # Data for camila and jessica project
-*.csv/
+framingham.csv
+cleaned_data.csv
 
-
+#Ds Store
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
