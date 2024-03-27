@@ -43,7 +43,7 @@ In this analysis, we will investigate the association between body mass index (B
 For this study we want to understand the association between BMI and the prevalence of hypertension on the Framingham Heart Study data set.
 
 * ## Cleaning the Data
-The Framingham data set we used was pre-processed but still included missing values (NA's) and because we do not want these NA's to affect our results we decided remove the NA's and this reduced the number of our observations. Additionally, we changed the column name of our dependent variable from 'PrevalentHYP' to 'pHyp' for clarity.
+The Framingham data set we used was pre-processed but still included missing values (NA's) and because we do not want these NA's to affect our results we decided remove the NA's and this reduced the number of our observations from 4240 to 3658. Additionally, we changed the column name of our dependent variable from 'PrevalentHYP' to 'pHyp' for clarity.
 
 
 * ## Generating and Testing Hypothesis
@@ -117,4 +117,11 @@ t_test_result <- t.test(pHyp_bmi, nopHyp_bmi)
 print(t_test_result)
 ```
 
-The logistic regression model indicates that for every 1 unit increase in BMI, Hypertension increases by 0.1707 and the t-test reveals our p-value is < 2.2e-16 which is less than 0.05 at a 95% confidence level indicating a statistically significant difference in BMI between hypertensive and non-hypertensive groups and this could not have occurred by random chance alone. Therefore, we have sufficient evidence to reject the null hypothesis in favour of the alternative hypothesis.
+The logistic regression model indicates that for every 1 unit increase in BMI, Hypertension increases by 0.1707 and the t-test reveals our p-value is < 2.2e-16 which is less than 0.05 at a 95% confidence level.
+
+
+# **DISCUSSION**
+
+The data from the Framingham Heart Study database was collected and applied logistic regression model and t-test. The aim was to understand the association between BMI and the prevalence of hypertension within the dataset. 
+The boxplot comparison shows a median BMI of 27 for the Hypertensive group and 24.67 for the Non-Hypertensive group. This suggests a potential association between higher BMI and hypertension.
+The investigation results in the logistic regression model indicates that for every 1 unit increase in BMI, Hypertension increases by 0.1707 and the t-test reveals our p-value is < 2.2e-16 which is less than 0.05 at a 95% confidence level indicating a statistically significant difference in BMI between hypertensive and non-hypertensive groups and this could not have occurred by random chance alone. Therefore, we have sufficient evidence to reject the null hypothesis in favor of the alternative hypothesis.
