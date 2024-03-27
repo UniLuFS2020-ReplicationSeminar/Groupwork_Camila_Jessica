@@ -18,7 +18,7 @@ install.packages("tidyverse")
 
 
 # Load data
-framingham_data <- read.csv("data/data_orig/framingham.csv")  #Update file path as needed
+framingham_data <-read.csv("data/data_orig/framingham.csv")  
 
 colnames(framingham_data)[colnames(framingham_data) == "prevalentHyp"] <- "pHyp"
 
@@ -39,14 +39,14 @@ In this analysis, we will investigate the association between body mass index (B
 
 # **METHODS**
 
+The data from the Framingham Heart Study database was collected from kaggle.com/datasets. The data was visualiesd using a boxplot and logistic regression and t-test analysis were computed. 
 
-For this study we want to understand the association between BMI and the prevalence of hypertension on the Framingham Heart Study data set.
 
 * ## Cleaning the Data
 The Framingham data set we used was pre-processed but still included missing values (NA's) and because we do not want these NA's to affect our results we decided remove the NA's and this reduced the number of our observations from 4240 to 3658. Additionally, we changed the column name of our dependent variable from 'PrevalentHYP' to 'pHyp' for clarity.
 
 
-* ## Generating and Testing Hypothesis
+* ## Generating and Testing Hypotheses
 
 
    **Null Hypothesis**: There is no association between BMI and the prevalence of hypertension among the studied population.
@@ -94,7 +94,6 @@ print(median_bmi_nopHyp)
 
 ```
 
-The boxplot comparison shows a median BMI of 27 for the Hypertensive group and 24.67 for the Non-Hypertensive group. This suggests a potential association between higher BMI and hypertension.
 
 
 ## Logistic regression model and t-test
@@ -117,15 +116,18 @@ t_test_result <- t.test(pHyp_bmi, nopHyp_bmi)
 print(t_test_result)
 ```
 
-The logistic regression model indicates that for every 1 unit increase in BMI, Hypertension increases by 0.1707 and the t-test reveals our p-value is < 2.2e-16 which is less than 0.05 at a 95% confidence level.
 
 
 # **DISCUSSION**
+The boxplot comparison shows a median BMI of 27 for the Hypertensive group and 24.67 for the Non-Hypertensive group. This suggests a potential association between higher BMI and hypertension.
+From the results, the logistic regression model indicates that for every 1 unit increase in BMI, Hypertension increases by 0.1707 and the t-test reveals our p-value is < 2.2e-16 which is less than 0.05 at a 95% confidence level indicating a statistically significant difference in BMI between hypertensive and non-hypertensive groups and this could not have occurred by random chance alone. Therefore, we have sufficient evidence to reject the null hypothesis in favor of the alternative hypothesis.
 
-The data from the Framingham Heart Study database was collected and applied logistic regression model and t-test. The aim was to understand the association between BMI and the prevalence of hypertension within the dataset. 
-A BMI between 18.5 and 24.9 is considered healthy weight range. A BMI between 25.0 and 29.9 falls within the overweight range and if is 30.0 or higher it is in the obese range [4]. The boxplot comparison shows a median BMI of 27 for the Hypertensive group,  and 24.67 for the Non-Hypertensive group. This suggests a potential association between higher BMI and hypertension, and corroborates with the relationship between obesity and hypertension.
-The investigation results in the logistic regression model indicates that for every 1 unit increase in BMI, Hypertension increases by 0.1707 and the t-test reveals our p-value is < 2.2e-16 which is less than 0.05 at a 95% confidence level indicating a statistically significant difference in BMI between hypertensive and non-hypertensive groups and this could not have occurred by random chance alone. Therefore, we have sufficient evidence to reject the null hypothesis in favor of the alternative hypothesis.
 
+# **CONCLUSION**
+
+ Our analysis reveals a correlation between BMI values and hypertension prevalence. However, it's crucial to know that while our findings highlight an association, determining a causal effect requires further study. Factors such as confounders and unaccounted variables may influence the outcome. Additionally, adhering to the established BMI classifications (healthy weight range (18.5 - 24.9), overweight (25.0 - 29.9) and obese 30.0 or higher), emphasizes the importance of maintaining a healthy weight range for mitigating the risk of hypertension and promoting overall well-being.
+ 
+ 
 # **REFERENCES**
 
 [1] Kuwabara M., Kuwabara R., Niwa K., Hisatome I., Smits G., Roncal-Jimenez C.A., MacLean P.S., Yracheta J.M., Ohno M., Lanaspa M.A., et al. Different Risk for Hypertension, Diabetes, Dyslipidemia, and Hyperuricemia According to Level of Body Mass Index in Japanese and American Subjects. Nutrients. 2018;10:1011. doi: 10.3390/nu10081011.
