@@ -35,11 +35,8 @@ po/*~
 rsconnect/
 # Data for camila and jessica project
 *.csv/
-<<<<<<< HEAD
+
 data/
 # Ignore .DS_Store files
-.DS_Store
-=======
 
->>>>>>> 7f1f33727f3633935d234f77e4886a72613dd7bc
-
+#DS_Store issue
