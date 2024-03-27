@@ -1,3 +1,4 @@
+
 # Groupwork_Camila_Jessica
 
 ## Aim of the Project
@@ -16,4 +17,5 @@ The aim of this work is to investigate the association between body mass index (
 - 02_Prep.R is another short script containing chunks of code used to clean our dataset.
 - 03_Visualization.R is a script containing chunks of codes used to generate a boxplot and median from our dataset.
 - 04_Analysis. R is a script containing chunks of codes used for a logistic regression model and a t-test.
+
 
