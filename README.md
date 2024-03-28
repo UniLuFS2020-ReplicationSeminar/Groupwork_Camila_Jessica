@@ -7,7 +7,7 @@ The aim of this work is to investigate the association between body mass index (
 - This repository contains 4 folders with different contents.  Below are short sentences describing them:
 
 - ### **Figs** 
-- This folder contain 1 figure. 
+- This folder contains 1 figure. 
 
 - ### **Output**: This folder consists of two files:
 - Report.Rmd file consists of a YAML header, chunks of code surrounded by ``` and texts. This file was used to produce a complete report containing text, codes and their outputs but the chunks of code are not accessible in this file.
@@ -20,5 +20,4 @@ The aim of this work is to investigate the association between body mass index (
 - 03_Visualization.R is a script containing chunks of codes used to generate a boxplot and median from our dataset.
 - 04_Analysis.R is a script containing chunks of codes used for a logistic regression model and a t-test.
 
-- ###**data/data_orig**:
-- This contains one folder with the raw data, the framingham.csv dataset used for this work.
+- ### **Data**: This folder has a nested folder called **data_orig** which contains the dataset(framingham.csv) used for this work.
