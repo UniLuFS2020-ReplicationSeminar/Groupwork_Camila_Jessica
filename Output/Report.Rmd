@@ -18,7 +18,7 @@ install.packages("tidyverse")
 
 
 # Load data
-framingham_data <- read.csv(file.choose("framingham.csv"))  
+framingham_data <- read.csv("data/data_origin/framingham.csv") 
 
 colnames(framingham_data)[colnames(framingham_data) == "prevalentHyp"] <- "pHyp"
 
