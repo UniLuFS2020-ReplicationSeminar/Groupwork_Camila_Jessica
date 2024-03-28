@@ -20,4 +20,4 @@ The aim of this work is to investigate the association between body mass index (
 - 03_Visualization.R is a script containing chunks of codes used to generate a boxplot and median from our dataset.
 - 04_Analysis.R is a script containing chunks of codes used for a logistic regression model and a t-test.
 
-- ### **Data**: This folder has a nested folder called **data_orig** which contains the dataset(framingham.csv) used for this work.
+- ### **Data**: This folder has a nested folder called data_orig which contains the dataset(framingham.csv) used for this work.
