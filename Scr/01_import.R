@@ -1,5 +1,6 @@
 #loading data
 
+
 framingham_data <- read.csv("data/data_orig/framingham.csv")
 
 

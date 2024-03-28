@@ -43,7 +43,7 @@ The data from the Framingham Heart Study database was collected from kaggle.com/
 
 
 * ## Cleaning the Data
-The Framingham data set we used was pre-processed but still included missing values (NA's) and because we do not want these NA's to affect our results we decided remove the NA's and this reduced the number of our observations from 4240 to 3658. Additionally, we changed the column name of our dependent variable from 'PrevalentHYP' to 'pHyp' for clarity.
+We pre-processed the Framingham dataset, addressing missing values (NA's) to ensure they don't influence our analysis, reducing our observations from 4240 to 3658. Renamed the dependent variable from 'PrevalentHYP' to 'pHyp' for clarity, and changed 'male' to 'gender', representing 0 as female (F) and 1 as male (M). Finally, we removed unnecessary binary variables such as 'currentSmoker', 'BPMeds', 'prevalentStroke', 'diabetes', and 'TenYearCHD'.
 
 
 * ## Generating and Testing Hypotheses
