@@ -372,16 +372,18 @@ as management strategies for hypertension.</p>
 <div id="methods" class="section level1">
 <h1><strong>METHODS</strong></h1>
 <p>The data from the Framingham Heart Study database was collected from
-kaggle.com/datasets. The data was visualiesd using a boxplot and
+kaggle.com/datasets. The data was visualised using a boxplot and
 logistic regression and t-test analysis were computed.</p>
 <ul>
 <li><h2 id="cleaning-the-data">Cleaning the Data</h2>
-<p>The Framingham data set we used was pre-processed but still included
-missing values (NA’s) and because we do not want these NA’s to affect
-our results we decided remove the NA’s and this reduced the number of
-our observations from 4240 to 3658. Additionally, we changed the column
-name of our dependent variable from ‘PrevalentHYP’ to ‘pHyp’ for
-clarity.</p></li>
+<p>We pre-processed the Framingham dataset, addressing missing values
+(NA’s) to ensure they do not influence our analysis. This reduced our
+observations from 4240 to 3658. The dependent variable was renamed from
+‘prevalentHYP’ to ‘pHyp’ for clarity, labels of the gender column were
+updated, changing ‘1’ to ‘M’ to represent male and ‘0’ to ‘F’ to
+represent female. Finally, we removed unnecessary binary variables such
+as ‘currentSmoker’, ‘BPMeds’, ‘prevalentStroke’, ‘diabetes’, and
+‘TenYearCHD’.</p></li>
 <li><h2 id="generating-and-testing-hypotheses">Generating and Testing
 Hypotheses</h2>
 <p><strong>Null Hypothesis</strong>: There is no association between BMI
@@ -390,7 +392,7 @@ and the prevalence of hypertension among the studied population.</p>
 between BMI and the prevalence of hypertension among the studied
 population.</p></li>
 </ul>
-<p>To test these hypotheses, we visualized the associations between BMI
+<p>To test these hypotheses, we visualised the associations between BMI
 and hypertension using boxplots and computed the BMI median for
 hypertensive and non-hypertensive groups. Furthermore, we employed a
 logistic regression model and a t-test to assess the statistical
@@ -445,13 +447,13 @@ hypothesis.</p>
 </div>
 <div id="conclusion" class="section level1">
 <h1><strong>CONCLUSION</strong></h1>
-<p>Our analysis reveals a correlation between BMI values and
+<p>Our analysis reveals an association between BMI values and
 hypertension prevalence. However, it’s crucial to know that while our
 findings highlight an association, determining a causal effect requires
 further study. Factors such as confounders and unaccounted variables may
-influence the outcome. Additionally, adhering to the established BMI
+influence the outcome. Moreover, adhering to the established BMI
 classifications (healthy weight range (18.5 - 24.9), overweight (25.0 -
-29.9) and obese 30.0 or higher), emphasizes the importance of
+29.9) and obese 30.0 or higher), emphasises the importance of
 maintaining a healthy weight range for mitigating the risk of
 hypertension and promoting overall well-being.</p>
 </div>

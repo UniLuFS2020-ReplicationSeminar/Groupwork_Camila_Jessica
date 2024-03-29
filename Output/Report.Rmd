@@ -8,24 +8,30 @@ output: html_document
 ```{r setup, include=FALSE}
 options(repos = c(CRAN = "https://cran.rstudio.com/"))  # Setting CRAN mirror
 
+#load data
+framingham_data <- read.csv("data/data_orig/framingham.csv")
 ```
 
 
-```{r load_data, include=FALSE}
+
+
+```{r preprocessing, include=FALSE}
+
 # Load necessary packages
 library(ggplot2)
-install.packages("tidyverse")
+library(tidyverse)
 
 
-# Load data
-framingham_data <- read.csv("data/data_origin/framingham.csv") 
 
-colnames(framingham_data)[colnames(framingham_data) == "prevalentHyp"] <- "pHyp"
-
-# Remove rows with "NA" values
-cleaned_data <- na.omit(framingham_data)
-
-print(colnames(framingham_data))
+cleaned_data <- framingham_data %>%
+  rename(pHyp = prevalentHyp) %>% #changing column name from prevalentHyp to pHyp
+  drop_na() %>%  #removing missing values
+  select(-currentSmoker, -BPMeds, -prevalentStroke, -diabetes, -TenYearCHD) %>% #removing unnecessary columns 
+  select(-pHyp, everything(), pHyp) %>% #making outcome column the last column
+  rename(gender = male) %>%  #changing the labels of gender
+  mutate(gender = ifelse(gender == 0, "F", "M"))
+# View cleaned data
+view(cleaned_data)
 
 ```
 
@@ -39,11 +45,11 @@ In this analysis, we will investigate the association between body mass index (B
 
 # **METHODS**
 
-The data from the Framingham Heart Study database was collected from kaggle.com/datasets. The data was visualiesd using a boxplot and logistic regression and t-test analysis were computed. 
+The data from the Framingham Heart Study database was collected from kaggle.com/datasets. The data was visualised using a boxplot and logistic regression and t-test analysis were computed. 
 
 
 * ## Cleaning the Data
-We pre-processed the Framingham dataset, addressing missing values (NA's) to ensure they don't influence our analysis, reducing our observations from 4240 to 3658. Renamed the dependent variable from 'PrevalentHYP' to 'pHyp' for clarity, and changed 'male' to 'gender', representing 0 as female (F) and 1 as male (M). Finally, we removed unnecessary binary variables such as 'currentSmoker', 'BPMeds', 'prevalentStroke', 'diabetes', and 'TenYearCHD'.
+We pre-processed the Framingham dataset, addressing missing values (NA's) to ensure they do not influence our analysis. This reduced our observations from 4240 to 3658. The dependent variable was renamed from 'prevalentHYP' to 'pHyp' for clarity, labels of the gender column were updated, changing '1' to 'M' to represent male and '0' to 'F' to represent  female. Finally, we removed unnecessary binary variables such as 'currentSmoker', 'BPMeds', 'prevalentStroke', 'diabetes', and 'TenYearCHD'.
 
 
 * ## Generating and Testing Hypotheses
@@ -53,7 +59,7 @@ We pre-processed the Framingham dataset, addressing missing values (NA's) to ens
 
    **Alternative Hypothesis**: There is an association between BMI and the prevalence of hypertension among the studied population. 
  
-To test these hypotheses, we visualized the associations between BMI and hypertension using boxplots and computed the BMI median for hypertensive and non-hypertensive groups. Furthermore, we employed a logistic regression model and a t-test to assess the statistical significance of our findings.
+To test these hypotheses, we visualised the associations between BMI and hypertension using boxplots and computed the BMI median for hypertensive and non-hypertensive groups. Furthermore, we employed a logistic regression model and a t-test to assess the statistical significance of our findings.
  
  
 # **RESULTS**
@@ -125,7 +131,7 @@ From the results, the logistic regression model indicates that for every 1 unit 
 
 # **CONCLUSION**
 
- Our analysis reveals a correlation between BMI values and hypertension prevalence. However, it's crucial to know that while our findings highlight an association, determining a causal effect requires further study. Factors such as confounders and unaccounted variables may influence the outcome. Additionally, adhering to the established BMI classifications (healthy weight range (18.5 - 24.9), overweight (25.0 - 29.9) and obese 30.0 or higher), emphasizes the importance of maintaining a healthy weight range for mitigating the risk of hypertension and promoting overall well-being.
+ Our analysis reveals an association between BMI values and hypertension prevalence. However, it's crucial to know that while our findings highlight an association, determining a causal effect requires further study. Factors such as confounders and unaccounted variables may influence the outcome. Moreover, adhering to the established BMI classifications (healthy weight range (18.5 - 24.9), overweight (25.0 - 29.9) and obese 30.0 or higher), emphasises the importance of maintaining a healthy weight range for mitigating the risk of hypertension and promoting overall well-being.
  
  
 # **REFERENCES**
