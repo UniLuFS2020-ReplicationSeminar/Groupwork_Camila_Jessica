@@ -10,8 +10,8 @@ The aim of this work is to investigate the association between body mass index (
 - This folder contains 1 figure. 
 
 - ### **Output**: This folder consists of two files:
-- Report.Rmd file consists of a YAML header, chunks of code surrounded by ``` and texts. This file was used to produce a complete report containing text, codes and their outputs but the chunks of code are not accessible in this file.
-- Report.html is an html file that was generated after saving and knitting our Report.html.
+- Report.Rmd file consists of a YAML header, chunks of code surrounded by ``` and texts. This file was used to generate an html file that includes a complete report containing text, codes and their outputs but the chunks of code are not accessible in this file.
+- Report.html is an html file that was generated after saving and knitting our Report.Rmd.
 
 - ### **Scr**: This folder consists of four R scripts:
 
